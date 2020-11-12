@@ -22,7 +22,7 @@ public class playermove : MonoBehaviour
         float xSpeed = 8.0f;
         float ySpeed = -8.0f;
 
-        if (Input.GetKey("left"))
+        if (Input.GetKey("a"))
         {
             anim.SetBool("isWalking", true);
             anim.SetBool("idle", false);
@@ -32,7 +32,7 @@ public class playermove : MonoBehaviour
 
         }
 
-        if (Input.GetKey("right"))
+        if (Input.GetKey("d"))
         {
             anim.SetBool("isWalking", true);
             anim.SetBool("idle", false);
@@ -42,7 +42,7 @@ public class playermove : MonoBehaviour
         }
 
 
-        if (Input.GetKey("up"))
+        if (Input.GetKey("w"))
         {
             anim.SetBool("isWalking", true);
             anim.SetBool("idle", false);
@@ -53,11 +53,11 @@ public class playermove : MonoBehaviour
 
         }
 
-        if (Input.GetKey("down"))
+        if (Input.GetKey("s"))
         {
             anim.SetBool("isWalking", true);
             anim.SetBool("idle", false);
-            ySpeed = -7.0f;
+            ySpeed = -8.0f;
             transform.position += new Vector3(0, ySpeed * Time.deltaTime, 0);
 
 
@@ -70,5 +70,6 @@ public class playermove : MonoBehaviour
             anim.SetBool("isWalking", false);
 
         }
+                
     }
 }
