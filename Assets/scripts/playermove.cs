@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class playermove : MonoBehaviour
 
 {
+
+
+    public static bool isdead = false;
     public Animator anim;
     public GameObject Camera;
     Rigidbody2D rb;
@@ -13,6 +17,8 @@ public class playermove : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+
     }
 
     void Update()
@@ -70,6 +76,19 @@ public class playermove : MonoBehaviour
             anim.SetBool("isWalking", false);
 
         }
-                
+
+
+
+
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Proj"))
+
+
+            Destroy (gameObject);
+
+    }
+
 }
