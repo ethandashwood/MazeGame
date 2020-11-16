@@ -18,7 +18,6 @@ public class playermove : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-
     }
 
     void Update()
@@ -52,7 +51,7 @@ public class playermove : MonoBehaviour
         {
             anim.SetBool("isWalking", true);
             anim.SetBool("idle", false);
-            ySpeed = 7.0f;
+            ySpeed = 8.0f;
             transform.position += new Vector3(0, ySpeed * Time.deltaTime, 0);
 
 
@@ -85,10 +84,12 @@ public class playermove : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Proj"))
+        {
 
-
+    
             Destroy (gameObject);
+        }
 
-    }
+    }   
 
 }
